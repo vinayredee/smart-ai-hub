@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,128 +9,247 @@
     @apply antialiased;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     @apply text-gray-900 bg-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Poppins', sans-serif;
   }
 }
 
 @layer components {
 
   /* Professional Card Styles */
-  .card {
-    @apply bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 rounded-xl;
+  .card-pro {
+    @apply relative bg-white border border-gray-100 rounded-2xl overflow-hidden transition-all duration-500;
+    @apply hover:shadow-soft hover:-translate-y-1;
   }
 
-  .card-hover {
-    @apply hover:-translate-y-1 hover:shadow-lg transition-all duration-300;
+  .card-pro::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: linear-gradient(135deg, rgba(0, 136, 255, 0.05) 0%, transparent 100%);
+  }
+
+  .card-pro:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Gradient Border Card */
+  .card-gradient-border {
+    @apply relative bg-white rounded-2xl overflow-hidden;
+    padding: 1px;
+  }
+
+  .card-gradient-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500;
+    background: linear-gradient(135deg, #0088ff, #00D4FF, #7C3AED);
+    z-index: -1;
+  }
+
+  .card-gradient-border:hover::before {
+    @apply opacity-100;
+  }
+
+  .card-gradient-border>div {
+    @apply bg-white rounded-2xl;
   }
 
   /* Button Styles */
-  .btn-primary {
-    @apply bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium px-5 py-2.5 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 text-sm shadow-sm hover:shadow-md;
+  .btn-pro {
+    @apply relative px-6 py-3 rounded-xl font-medium text-sm overflow-hidden;
+    @apply transition-all duration-300 transform hover:scale-105;
   }
 
-  .btn-secondary {
-    @apply bg-white border border-gray-200 text-gray-700 font-medium px-5 py-2.5 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 text-sm shadow-sm;
+  .btn-primary-pro {
+    @apply btn-pro bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-md;
+    @apply hover:shadow-glow hover:from-primary-700 hover:to-primary-600;
+  }
+
+  .btn-secondary-pro {
+    @apply btn-pro bg-white border border-gray-200 text-gray-700;
+    @apply hover:bg-gray-50 hover:border-gray-300 hover:shadow-md;
+  }
+
+  /* Ripple Effect */
+  .btn-ripple {
+    @apply relative overflow-hidden;
+  }
+
+  .btn-ripple::after {
+    content: '';
+    @apply absolute top-1/2 left-1/2 w-0 h-0 rounded-full bg-white/30;
+    @apply transform -translate-x-1/2 -translate-y-1/2;
+    transition: width 0.6s, height 0.6s;
+  }
+
+  .btn-ripple:active::after {
+    @apply w-96 h-96;
   }
 
   /* Input Styles */
-  .input {
-    @apply w-full px-4 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-900 text-sm focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 placeholder:text-gray-400;
+  .input-pro {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm;
+    @apply focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-200;
+    @apply placeholder:text-gray-400;
   }
 
-  /* Text Animations */
-  .fade-in {
-    animation: fadeIn 0.6s ease-in;
+  /* Text Gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #0088ff 0%, #00D4FF 50%, #7C3AED 100%);
   }
 
-  .slide-up {
-    animation: slideUp 0.5s ease-out;
+  .text-gradient-animate {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #0088ff 0%, #00D4FF 50%, #7C3AED 100%);
+    background-size: 200% 200%;
+    animation: gradient 8s linear infinite;
   }
 
-  .scale-in {
-    animation: scaleIn 0.3s ease-out;
+  /* Glass Effect */
+  .glass-pro {
+    @apply backdrop-blur-xl bg-white/80 border border-white/20;
   }
 
-  /* Minimal Badge */
-  .badge {
-    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  /* Shimmer Loading */
+  .shimmer {
+    @apply relative overflow-hidden bg-gray-100;
   }
 
-  /* Professional Section */
-  .section {
-    @apply py-16 px-4 sm:px-6 lg:px-8;
+  .shimmer::after {
+    content: '';
+    @apply absolute inset-0;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.8),
+        transparent);
+    animation: shimmer 2s linear infinite;
+  }
+
+  /* Badge Styles */
+  .badge-pro {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-blue {
+    @apply badge-pro bg-blue-50 text-blue-700 border border-blue-200;
+  }
+
+  .badge-green {
+    @apply badge-pro bg-emerald-50 text-emerald-700 border border-emerald-200;
+  }
+
+  .badge-purple {
+    @apply badge-pro bg-purple-50 text-purple-700 border border-purple-200;
+  }
+
+  /* Section Styles */
+  .section-pro {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
   }
 
   .section-title {
-    @apply text-3xl font-bold text-gray-900 mb-2;
+    @apply text-4xl md:text-5xl font-bold font-display text-gray-900 mb-4;
   }
 
   .section-subtitle {
-    @apply text-base text-gray-600 max-w-2xl;
+    @apply text-lg text-gray-600 max-w-2xl;
+  }
+
+  /* Scroll Indicator */
+  .scroll-indicator {
+    @apply fixed top-0 left-0 h-1 bg-gradient-to-r from-primary-600 to-accent-blue z-50;
+    transition: width 0.1s ease-out;
+  }
+
+  /* Floating Animation */
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Custom Cursor Trail */
+  .cursor-dot {
+    @apply fixed w-2 h-2 bg-primary-600 rounded-full pointer-events-none z-50;
+    @apply transform -translate-x-1/2 -translate-y-1/2;
+    transition: transform 0.15s ease-out;
+  }
+
+  .cursor-outline {
+    @apply fixed w-10 h-10 border-2 border-primary-600 rounded-full pointer-events-none z-50;
+    @apply transform -translate-x-1/2 -translate-y-1/2;
+    transition: transform 0.2s ease-out, width 0.2s, height 0.2s;
   }
 }
 
 @layer utilities {
 
-  /* Text Sizes - Minimal & Professional */
-  .text-xs-tight {
-    @apply text-xs leading-tight;
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
-  .text-sm-tight {
-    @apply text-sm leading-snug;
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 
-  /* Smooth Scroll */
-  html {
-    scroll-behavior: smooth;
+  /* Smooth scroll snap */
+  .scroll-snap-x {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
-  /* Focus Visible */
-  .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:ring-offset-2;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+  .scroll-snap-child {
+    scroll-snap-align: start;
   }
 
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  /* Focus ring */
+  .focus-ring-pro {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:ring-offset-2;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  /* Text balance for better typography */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Perspective for 3D effects */
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
   }
 }
 
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Smooth Transitions for Dark Mode */
+/* Smooth transitions for everything */
 * {
-  transition-property: background-color, border-color, color;
+  transition-property: background-color, border-color, color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-primary-600 text-white;
+}
+
+/* Remove default focus styles and add custom */
+:focus-visible {
+  outline: 2px solid #0088ff;
+  outline-offset: 2px;
 }
