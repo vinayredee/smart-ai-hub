@@ -276,7 +276,7 @@ export const aiTools: AITool[] = [
     id: 'duolingo',
     name: 'Duolingo',
     description: 'AI-powered language learning app with personalized lessons and gamification',
-    category: categories[0], // education
+    category: categories[8], // education
     website: 'https://duolingo.com',
     pricing: { type: 'freemium' },
     features: ['Language learning', 'Speech recognition', 'Adaptive lessons', 'Gamification', 'Progress tracking'],
@@ -298,7 +298,7 @@ export const aiTools: AITool[] = [
     id: 'coursera',
     name: 'Coursera AI',
     description: 'Online learning platform with AI-powered course recommendations and personalized learning paths',
-    category: categories[0], // education
+    category: categories[8], // education
     website: 'https://coursera.org',
     pricing: { type: 'freemium' },
     features: ['Course recommendations', 'Personalized learning', 'Skill assessments', 'Certificates', 'Peer learning'],

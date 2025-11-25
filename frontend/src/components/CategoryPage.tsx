@@ -95,6 +95,38 @@ const CategoryPage: React.FC = () => {
                         )}
                     </div>
                 )}
+
+                {/* Coming Soon Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mt-20 text-center"
+                >
+                    <div className="inline-flex items-center justify-center p-1 rounded-full bg-gradient-to-r from-primary-100 to-purple-100 mb-6">
+                        <div className="bg-white px-6 py-2 rounded-full shadow-sm">
+                            <span className="text-sm font-semibold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent uppercase tracking-wider">
+                                Updates Incoming
+                            </span>
+                        </div>
+                    </div>
+
+                    <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                        More AI Tools Coming Soon
+                    </h3>
+                    <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
+                        We are constantly researching and testing new AI tools to add to our directory.
+                        Stay tuned for the latest updates in {category.name}.
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                        {[1, 2, 3].map((item) => (
+                            <div key={item} className="h-32 border-2 border-dashed border-gray-300 rounded-2xl flex items-center justify-center bg-gray-50">
+                                <span className="text-gray-400 font-medium">New Tool Loading...</span>
+                            </div>
+                        ))}
+                    </div>
+                </motion.div>
             </div>
         </div>
     );
