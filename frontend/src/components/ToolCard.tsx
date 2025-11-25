@@ -53,7 +53,15 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, index }) => {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-600 via-accent-blue to-purple-600 rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500"></div>
 
                 {/* Card content */}
-                <div className="relative h-full bg-white rounded-2xl border-2 border-transparent bg-gradient-to-r from-primary-200 via-purple-200 to-pink-200 bg-clip-border shadow-sm hover:shadow-md p-6 transition-all duration-300 overflow-hidden" style={{ borderImage: 'linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899) 1' }}>
+                <div
+                    className="relative h-full bg-white rounded-2xl shadow-sm hover:shadow-md p-6 transition-all duration-300 overflow-hidden"
+                    style={{
+                        border: '2px solid transparent',
+                        backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899)',
+                        backgroundOrigin: 'border-box',
+                        backgroundClip: 'padding-box, border-box'
+                    }}
+                >
                     {/* Background gradient on hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary-50/50 via-transparent to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
