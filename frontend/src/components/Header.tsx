@@ -65,8 +65,8 @@ const Header: React.FC = () => {
             <Link
               to="/"
               className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive('/')
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                ? 'text-blue-600 bg-blue-50'
+                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`}
             >
               Discover
@@ -99,15 +99,6 @@ const Header: React.FC = () => {
 
           {/* User Actions */}
           <div className="flex items-center space-x-3">
-            {/* AI Assistant Button */}
-            <Link
-              to="/chat"
-              className="hidden md:flex items-center space-x-2 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium text-sm hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-sm"
-            >
-              <span>🤖</span>
-              <span>AI Assistant</span>
-            </Link>
-
             {/* Submit Tool Button */}
             <Link
               to="/submit"
@@ -141,8 +132,8 @@ const Header: React.FC = () => {
                 to="/"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive('/')
-                    ? 'text-blue-600 bg-blue-50'
-                    : 'text-gray-700 hover:bg-gray-50'
+                  ? 'text-blue-600 bg-blue-50'
+                  : 'text-gray-700 hover:bg-gray-50'
                   }`}
               >
                 Discover
@@ -164,8 +155,8 @@ const Header: React.FC = () => {
                 to="/submit"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive('/submit')
-                    ? 'text-blue-600 bg-blue-50'
-                    : 'text-gray-700 hover:bg-gray-50'
+                  ? 'text-blue-600 bg-blue-50'
+                  : 'text-gray-700 hover:bg-gray-50'
                   }`}
               >
                 Submit Tool

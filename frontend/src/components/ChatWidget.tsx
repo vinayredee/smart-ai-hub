@@ -81,28 +81,15 @@ const ChatWidget: React.FC = () => {
 
     return (
         <>
-            {/* Floating Chat Button with Animation */}
+            {/* Floating Chat Button */}
             <motion.button
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
-                whileHover={{ scale: 1.1 }}
-                transition={{ delay: 1, type: "spring", stiffness: 400 }}
+                transition={{ delay: 1 }}
                 onClick={() => setIsOpen(true)}
-                className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-700 hover:to-purple-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center z-40"
+                className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-700 hover:to-purple-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center z-40 group"
             >
-                <motion.div
-                    animate={{
-                        rotate: [0, 10, -10, 0],
-                        scale: [1, 1.1, 1],
-                    }}
-                    transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        repeatDelay: 3
-                    }}
-                >
-                    <Sparkles className="w-6 h-6" />
-                </motion.div>
+                <Sparkles className="w-6 h-6 group-hover:scale-110 transition-transform" />
             </motion.button>
 
             {/* Minimal Chat Window */}

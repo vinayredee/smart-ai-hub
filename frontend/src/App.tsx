@@ -6,8 +6,7 @@ import Hero from './components/Hero';
 import ToolGrid from './components/ToolGrid';
 import ToolDetail from './components/ToolDetail';
 import Comparison from './components/Comparison';
-import ChatBot from './components/ChatBot';
-import ChatPage from './components/ChatPage';
+import ChatWidget from './components/ChatWidget';
 import Footer from './components/Footer';
 import CategoryShowcase from './components/CategoryShowcase';
 import CategoryPage from './components/CategoryPage';
@@ -60,11 +59,10 @@ function App() {
                       <Route path="/category/:id" element={<CategoryPage />} />
                       <Route path="/tool/:id" element={<ToolDetail />} />
                       <Route path="/compare" element={<Comparison />} />
-                      <Route path="/chat" element={<ChatPage />} />
                       <Route path="/submit" element={<AddTool />} />
                     </Routes>
                   </main>
-                  <ChatBot />
+                  <ChatWidget />
                   <Footer />
                 </div>
               </Router>
