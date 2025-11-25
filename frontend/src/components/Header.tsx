@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Moon, Sun, Menu, X, Compass, ChevronDown } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Moon, Sun, Menu, X, ChevronDown, Sparkles } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { categories } from '../data/aiTools';
 
 const Header: React.FC = () => {
   const { isDarkMode, toggleDarkMode } = useTheme();
-  const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCategoriesOpen, setIsCategoriesOpen] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
@@ -16,18 +17,47 @@ const Header: React.FC = () => {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="relative w-8 h-8">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg opacity-90 group-hover:opacity-100 transition-opacity">
+          {/* Animated Logo */}
+          <Link to="/" className="flex items-center space-x-3 group">
+            <motion.div
+              className="relative w-10 h-10"
+              whileHover={{ scale: 1.1, rotate: 360 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+            >
+              {/* Outer ring */}
+              <motion.div
+                className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary-600 via-accent-blue to-purple-600"
+                animate={{
+                  rotate: 360,
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
+              {/* Inner white circle with icon */}
+              <div className="absolute inset-1 bg-white rounded-lg flex items-center justify-center">
+                <motion.div
+                  animate={{
+                    scale: [1, 1.2, 1],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <Sparkles className="w-5 h-5 text-primary-600" />
+                </motion.div>
               </div>
-              <div className="absolute inset-1 bg-white rounded-md flex items-center justify-center">
-                <Compass className="w-4 h-4 text-blue-600" />
-              </div>
-            </div>
-            <span className="text-lg font-semibold text-gray-900">
+            </motion.div>
+            <motion.span
+              className="text-lg font-semibold bg-gradient-to-r from-primary-600 via-accent-blue to-purple-600 bg-clip-text text-transparent"
+              whileHover={{ scale: 1.05 }}
+            >
               Smart AI Hub
-            </span>
+            </motion.span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -35,8 +65,8 @@ const Header: React.FC = () => {
             <Link
               to="/"
               className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive('/')
-                ? 'text-blue-600 bg-blue-50'
-                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  ? 'text-blue-600 bg-blue-50'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`}
             >
               Discover
@@ -81,7 +111,7 @@ const Header: React.FC = () => {
             {/* Submit Tool Button */}
             <Link
               to="/submit"
-              className="hidden md:block btn-secondary text-sm"
+              className="hidden md:block btn-secondary-pro text-sm"
             >
               Submit Tool
             </Link>
@@ -111,8 +141,8 @@ const Header: React.FC = () => {
                 to="/"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive('/')
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-700 hover:bg-gray-50'
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:bg-gray-50'
                   }`}
               >
                 Discover
@@ -134,8 +164,8 @@ const Header: React.FC = () => {
                 to="/submit"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive('/submit')
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-700 hover:bg-gray-50'
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:bg-gray-50'
                   }`}
               >
                 Submit Tool

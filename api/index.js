@@ -1,3 +1,2 @@
-const app = require('../backend/server');
-
-module.exports = app;
+// Export the backend server for Vercel serverless functions
+module.exports = require('../backend/server');
