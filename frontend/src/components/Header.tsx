@@ -26,7 +26,7 @@ const Header: React.FC = () => {
               </div>
             </div>
             <span className="text-lg font-semibold text-gray-900">
-              AI Compass
+              Smart AI Hub
             </span>
           </Link>
 
@@ -35,8 +35,8 @@ const Header: React.FC = () => {
             <Link
               to="/"
               className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive('/')
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                ? 'text-blue-600 bg-blue-50'
+                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`}
             >
               Discover
@@ -111,8 +111,8 @@ const Header: React.FC = () => {
                 to="/"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive('/')
-                    ? 'text-blue-600 bg-blue-50'
-                    : 'text-gray-700 hover:bg-gray-50'
+                  ? 'text-blue-600 bg-blue-50'
+                  : 'text-gray-700 hover:bg-gray-50'
                   }`}
               >
                 Discover
@@ -134,8 +134,8 @@ const Header: React.FC = () => {
                 to="/submit"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive('/submit')
-                    ? 'text-blue-600 bg-blue-50'
-                    : 'text-gray-700 hover:bg-gray-50'
+                  ? 'text-blue-600 bg-blue-50'
+                  : 'text-gray-700 hover:bg-gray-50'
                   }`}
               >
                 Submit Tool

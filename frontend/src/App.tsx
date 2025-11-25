@@ -7,6 +7,7 @@ import ToolGrid from './components/ToolGrid';
 import ToolDetail from './components/ToolDetail';
 import Comparison from './components/Comparison';
 import ChatBot from './components/ChatBot';
+import ChatPage from './components/ChatPage';
 import Footer from './components/Footer';
 import CategoryShowcase from './components/CategoryShowcase';
 import CategoryPage from './components/CategoryPage';
@@ -59,6 +60,7 @@ function App() {
                       <Route path="/category/:id" element={<CategoryPage />} />
                       <Route path="/tool/:id" element={<ToolDetail />} />
                       <Route path="/compare" element={<Comparison />} />
+                      <Route path="/chat" element={<ChatPage />} />
                       <Route path="/submit" element={<AddTool />} />
                     </Routes>
                   </main>

@@ -103,22 +103,22 @@ const Hero: React.FC = () => {
           </motion.div>
 
           {/* Main Heading with Gradient */}
-          <h1 className="text-5xl md:text-7xl font-bold font-display mb-6">
-            <span className="block text-gray-900 mb-2">Navigate the</span>
+          <h1 className="text-4xl md:text-6xl font-bold font-display mb-6 leading-tight">
+            <span className="block text-gray-900 mb-2">Your Gateway to</span>
             <span className="block text-gradient-animate">
-              AI Revolution
+              Smart AI Solutions
             </span>
           </h1>
 
           {/* Subtitle */}
           <motion.p
-            className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-12 text-balance"
+            className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            Curated collection of <strong className="text-gray-900">70+ cutting-edge AI tools</strong> to supercharge
-            your productivity and creativity
+            Discover <strong className="text-gray-900">70+ cutting-edge AI tools</strong> carefully curated to boost
+            your productivity and unlock your creative potential
           </motion.p>
 
           {/* CTA Buttons */}
