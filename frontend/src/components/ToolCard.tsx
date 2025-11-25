@@ -98,10 +98,10 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, index }) => {
                         </p>
 
                         {/* Actions */}
-                        <div className="flex items-center space-x-3 mt-auto">
+                        <div className="flex items-center space-x-2 mt-auto">
                             <Link
                                 to={`/tool/${tool.id}`}
-                                className="flex-1 text-center px-4 py-2.5 bg-gray-50 hover:bg-gray-100 text-gray-700 font-medium text-sm rounded-lg transition-all duration-300 group-hover:bg-primary-50 group-hover:text-primary-700"
+                                className="flex-1 text-center px-3 py-2 bg-gray-50 hover:bg-gray-100 text-gray-700 font-medium text-xs rounded-lg transition-all duration-300 group-hover:bg-primary-50 group-hover:text-primary-700"
                             >
                                 Learn More
                             </Link>
@@ -109,7 +109,7 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, index }) => {
                                 href={tool.website}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-3 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-medium text-sm rounded-lg transition-all duration-300 group-hover:shadow-glow whitespace-nowrap"
+                                className="px-3 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium text-xs rounded-lg transition-all duration-300 whitespace-nowrap"
                             >
                                 Visit Site
                             </a>

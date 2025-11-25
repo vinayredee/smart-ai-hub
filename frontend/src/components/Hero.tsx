@@ -141,6 +141,18 @@ const Hero: React.FC = () => {
                 →
               </motion.div>
             </button>
+            <button
+              onClick={() => {
+                const categorySection = document.querySelector('#category-showcase');
+                if (categorySection) {
+                  categorySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+              className="btn-secondary-pro flex items-center space-x-2"
+            >
+              <Sparkles className="w-5 h-5" />
+              <span>Browse by Category</span>
+            </button>
           </motion.div>
 
           {/* Stats */}
