@@ -93,7 +93,7 @@ export const aiTools: AITool[] = [
     id: 'khan-academy',
     name: 'Khan Academy AI',
     description: 'Personalized learning platform with AI-powered tutoring and adaptive learning paths',
-    category: categories[0], // education
+    category: categories[8], // education
     website: 'https://khanacademy.org',
     pricing: { type: 'free' },
     features: ['Adaptive learning', 'Personalized tutoring', 'Progress tracking', 'Interactive exercises', 'Video lessons'],
