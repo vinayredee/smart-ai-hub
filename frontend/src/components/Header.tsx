@@ -59,7 +59,7 @@ const Header: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.p
-              className="text-sm font-medium text-gray-600"
+              className="text-base font-semibold text-gray-700"
               animate={{
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
               }}
