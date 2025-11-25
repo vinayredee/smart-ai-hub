@@ -141,13 +141,6 @@ const Hero: React.FC = () => {
                 →
               </motion.div>
             </button>
-            <button
-              onClick={() => navigate('/chat')}
-              className="btn-secondary-pro flex items-center space-x-2"
-            >
-              <Zap className="w-5 h-5" />
-              <span>Try AI Assistant</span>
-            </button>
           </motion.div>
 
           {/* Stats */}
