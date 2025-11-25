@@ -33,6 +33,7 @@ export interface Category {
 
 export interface Pricing {
   type: 'free' | 'freemium' | 'paid' | 'enterprise';
+  startingPrice?: string;
   freeTier?: {
     description: string;
     limitations: string[];
