@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Github, Twitter, Mail, Code } from 'lucide-react';
+import { Sparkles, Github, Mail, Code } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Footer: React.FC = () => {
@@ -36,15 +36,7 @@ const Footer: React.FC = () => {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-600 transition-colors"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:smartaihub@gmail.com"
+                href="mailto:kunduvinaykumarreddy@gmail.com"
                 className="text-gray-400 hover:text-primary-600 transition-colors"
               >
                 <Mail className="w-5 h-5" />
@@ -131,7 +123,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-200 mt-12 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-gray-600">
-              © 2024 Smart AI Hub. All rights reserved.
+              © 2025 Smart AI Hub. All rights reserved.
             </p>
 
             {/* Developer Credit */}

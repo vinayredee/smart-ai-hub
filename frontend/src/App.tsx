@@ -6,7 +6,6 @@ import Hero from './components/Hero';
 import ToolGrid from './components/ToolGrid';
 import ToolDetail from './components/ToolDetail';
 import Comparison from './components/Comparison';
-import ChatWidget from './components/ChatWidget';
 import Footer from './components/Footer';
 import CategoryShowcase from './components/CategoryShowcase';
 import CategoryPage from './components/CategoryPage';
@@ -62,7 +61,6 @@ function App() {
                       <Route path="/submit" element={<AddTool />} />
                     </Routes>
                   </main>
-                  <ChatWidget />
                   <Footer />
                 </div>
               </Router>

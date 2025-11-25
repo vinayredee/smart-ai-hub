@@ -53,7 +53,7 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, index }) => {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-600 via-accent-blue to-purple-600 rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500"></div>
 
                 {/* Card content */}
-                <div className="relative h-full bg-white rounded-2xl border border-gray-100 p-6 transition-all duration-300 group-hover:shadow-soft overflow-hidden">
+                <div className="relative h-full bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md p-6 transition-all duration-300 overflow-hidden">
                     {/* Background gradient on hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary-50/50 via-transparent to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -109,7 +109,7 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, index }) => {
                                 href={tool.website}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-4 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-medium text-sm rounded-lg transition-all duration-300 group-hover:shadow-glow whitespace-nowrap"
+                                className="px-3 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-medium text-sm rounded-lg transition-all duration-300 group-hover:shadow-glow whitespace-nowrap"
                             >
                                 Visit Site
                             </a>
