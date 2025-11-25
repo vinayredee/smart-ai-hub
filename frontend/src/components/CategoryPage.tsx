@@ -9,6 +9,8 @@ import { AITool } from '../types';
 
 import { useSearch } from '../contexts/SearchContext';
 
+import ToolCard from './ToolCard';
+
 const CategoryPage: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const { searchQuery } = useSearch();
@@ -42,25 +44,25 @@ const CategoryPage: React.FC = () => {
                 <div className="mb-12">
                     <Link
                         to="/"
-                        className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 mb-6 transition-colors"
+                        className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 mb-8 transition-colors group"
                     >
-                        <ArrowLeft className="w-4 h-4 mr-2" />
+                        <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
                         Back to Home
                     </Link>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="flex items-center space-x-4"
+                        className="flex flex-col md:flex-row md:items-center gap-6"
                     >
-                        <div className={`w-16 h-16 ${category.color} rounded-2xl flex items-center justify-center text-white shadow-lg`}>
-                            <span className="text-2xl font-bold">{category.name.charAt(0)}</span>
+                        <div className={`w-20 h-20 ${category.color} rounded-2xl flex items-center justify-center text-white shadow-lg shadow-primary-500/20`}>
+                            <span className="text-3xl font-bold">{category.name.charAt(0)}</span>
                         </div>
                         <div>
-                            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 tracking-tight">
                                 {category.name}
                             </h1>
-                            <p className="text-xl text-gray-600 dark:text-gray-300">
+                            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed">
                                 {category.description}
                             </p>
                         </div>
@@ -73,60 +75,22 @@ const CategoryPage: React.FC = () => {
                         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
                     </div>
                 ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {tools.length === 0 ? (
-                            <div className="col-span-full text-center py-20">
+                            <div className="col-span-full text-center py-20 bg-white rounded-3xl border border-gray-100 shadow-sm">
                                 <p className="text-xl text-gray-500 dark:text-gray-400">No tools found for this category yet.</p>
-                                <Link to="/" className="text-primary-600 hover:underline mt-4 inline-block">Explore other categories</Link>
+                                <Link to="/" className="text-primary-600 hover:underline mt-4 inline-block font-medium">Explore other categories</Link>
                             </div>
                         ) : (
                             tools.map((tool: AITool, index: number) => (
-                                <motion.a
+                                <motion.div
                                     key={tool.id}
-                                    href={tool.website}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: index * 0.1 }}
-                                    className="glass-card p-8 rounded-2xl group hover:border-primary-500/30 block h-full"
+                                    transition={{ delay: index * 0.05 }}
                                 >
-                                    <div className="flex justify-between items-start mb-6">
-                                        <div>
-                                            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary-600 transition-colors">
-                                                {tool.name}
-                                            </h3>
-                                            <div className="flex items-center space-x-2 text-sm">
-                                                <div className="flex items-center text-yellow-500">
-                                                    <Star className="w-4 h-4 fill-current mr-1" />
-                                                    <span className="text-gray-700 dark:text-gray-300">{tool.rating}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="btn-primary flex items-center space-x-2">
-                                            <span>Visit</span>
-                                            <ExternalLink className="w-4 h-4" />
-                                        </div>
-                                    </div>
-
-                                    <p className="text-gray-600 dark:text-gray-300 text-lg mb-8 leading-relaxed">
-                                        {tool.description}
-                                    </p>
-
-                                    <div>
-                                        <h4 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4">
-                                            Best Used For
-                                        </h4>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                            {tool.useCases.map((useCase, i) => (
-                                                <div key={i} className="flex items-start space-x-2 text-gray-600 dark:text-gray-400">
-                                                    <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
-                                                    <span>{useCase}</span>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </motion.a>
+                                    <ToolCard tool={tool} />
+                                </motion.div>
                             ))
                         )}
                     </div>
