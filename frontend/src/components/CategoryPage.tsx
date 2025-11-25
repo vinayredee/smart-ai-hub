@@ -89,7 +89,7 @@ const CategoryPage: React.FC = () => {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: index * 0.05 }}
                                 >
-                                    <ToolCard tool={tool} />
+                                    <ToolCard tool={tool} index={index} />
                                 </motion.div>
                             ))
                         )}
