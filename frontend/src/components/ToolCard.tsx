@@ -105,16 +105,14 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, index }) => {
                             >
                                 Learn More
                             </Link>
-                            <motion.a
+                            <a
                                 href={tool.website}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-2.5 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-all duration-300 group-hover:shadow-glow"
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.95 }}
+                                className="px-4 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-medium text-sm rounded-lg transition-all duration-300 group-hover:shadow-glow whitespace-nowrap"
                             >
-                                <ExternalLink className="w-4 h-4" />
-                            </motion.a>
+                                Visit Site
+                            </a>
                         </div>
                     </div>
 

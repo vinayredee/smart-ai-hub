@@ -57,10 +57,15 @@ const CategoryShowcase: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Arrow indicator */}
-                <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {/* Arrow indicator - only for this card */}
+                <motion.div
+                  className="absolute bottom-3 right-3"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileHover={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
                   <Icons.ArrowRight className="w-4 h-4 text-primary-600" />
-                </div>
+                </motion.div>
               </motion.div>
             </Link>
           ))}
