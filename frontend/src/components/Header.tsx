@@ -1,18 +1,9 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Moon, Sun, Menu, X, ChevronDown, Sparkles } from 'lucide-react';
-import { useTheme } from '../contexts/ThemeContext';
-import { categories } from '../data/aiTools';
+import { Sparkles } from 'lucide-react';
 
 const Header: React.FC = () => {
-  const { isDarkMode, toggleDarkMode } = useTheme();
-  const [isCategoriesOpen, setIsCategoriesOpen] = React.useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-  const location = useLocation();
-
-  const isActive = (path: string) => location.pathname === path;
-
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,110 +51,43 @@ const Header: React.FC = () => {
             </motion.span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
-            <Link
-              to="/"
-              className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive('/')
-                ? 'text-blue-600 bg-blue-50'
-                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                }`}
+          {/* Animated Tagline */}
+          <motion.div
+            className="hidden md:flex items-center space-x-2"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <motion.p
+              className="text-sm font-medium text-gray-600"
+              animate={{
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              style={{
+                background: 'linear-gradient(90deg, #3B82F6, #8B5CF6, #EC4899, #3B82F6)',
+                backgroundSize: '200% auto',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
             >
-              Discover
-            </Link>
-            <div className="relative">
-              <button
-                onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
-                onBlur={() => setTimeout(() => setIsCategoriesOpen(false), 200)}
-                className="flex items-center space-x-1 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
-              >
-                <span>Categories</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${isCategoriesOpen ? 'rotate-180' : ''}`} />
-              </button>
-              {isCategoriesOpen && (
-                <div className="absolute top-full mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50">
-                  {categories.map((category) => (
-                    <Link
-                      key={category.id}
-                      to={`/category/${category.id}`}
-                      onClick={() => setIsCategoriesOpen(false)}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
-                    >
-                      {category.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          </nav>
+              Discover the best AI tools for your needs
+            </motion.p>
+          </motion.div>
 
-          {/* User Actions */}
-          <div className="flex items-center space-x-3">
-            {/* Submit Tool Button */}
-            <Link
-              to="/submit"
-              className="hidden md:block btn-secondary-pro text-sm"
-            >
-              Submit Tool
-            </Link>
-
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
-            >
-              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </button>
-
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
-            >
-              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
+          {/* Submit Tool Button */}
+          <Link
+            to="/submit"
+            className="hidden md:block btn-secondary-pro text-sm"
+          >
+            Submit Tool
+          </Link>
         </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-100">
-            <div className="space-y-2">
-              <Link
-                to="/"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive('/')
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-700 hover:bg-gray-50'
-                  }`}
-              >
-                Discover
-              </Link>
-              <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                Categories
-              </div>
-              {categories.slice(0, 6).map((category) => (
-                <Link
-                  key={category.id}
-                  to={`/category/${category.id}`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors rounded-lg"
-                >
-                  {category.name}
-                </Link>
-              ))}
-              <Link
-                to="/submit"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive('/submit')
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-700 hover:bg-gray-50'
-                  }`}
-              >
-                Submit Tool
-              </Link>
-            </div>
-          </div>
-        )}
       </div>
     </header>
   );
