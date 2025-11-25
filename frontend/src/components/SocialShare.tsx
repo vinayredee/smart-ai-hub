@@ -12,7 +12,7 @@ const SocialShare: React.FC<SocialShareProps> = ({ toolName, toolUrl, className 
   const [isOpen, setIsOpen] = useState(false);
 
   const shareUrl = `${window.location.origin}${toolUrl}`;
-  const shareText = `Check out ${toolName} on AI Compass - the best AI tool discovery platform!`;
+  const shareText = `Check out ${toolName} on Smart AI Hub - the best AI tool discovery platform!`;
 
   const shareLinks = [
     {

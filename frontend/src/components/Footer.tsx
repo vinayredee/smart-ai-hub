@@ -1,32 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Compass, Github, Twitter, Mail, Heart } from 'lucide-react';
+import { Sparkles, Github, Twitter, Mail, Code } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white dark:bg-dark-800 border-t border-gray-200 dark:border-dark-700">
+    <footer className="bg-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-primary-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <Compass className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold text-gray-900 dark:text-white">
-                AI Compass
+              <motion.div
+                className="w-8 h-8 bg-gradient-to-r from-primary-600 to-purple-600 rounded-lg flex items-center justify-center"
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              >
+                <Sparkles className="w-5 h-5 text-white" />
+              </motion.div>
+              <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">
+                Smart AI Hub
               </span>
             </div>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-md">
-              Find the perfect AI tool for your needs. Discover, compare, and choose from 
-              hundreds of AI tools and models with personalized recommendations.
+            <p className="text-gray-600 mb-6 max-w-md text-sm">
+              Discover the best AI tools for your needs. Compare and choose from
+              70+ curated AI tools with personalized recommendations.
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/vinayredee"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="text-gray-400 hover:text-primary-600 transition-colors"
               >
                 <Github className="w-5 h-5" />
               </a>
@@ -34,13 +39,13 @@ const Footer: React.FC = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="text-gray-400 hover:text-primary-600 transition-colors"
               >
                 <Twitter className="w-5 h-5" />
               </a>
               <a
-                href="mailto:hello@aicompass.com"
-                className="text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                href="mailto:smartaihub@gmail.com"
+                className="text-gray-400 hover:text-primary-600 transition-colors"
               >
                 <Mail className="w-5 h-5" />
               </a>
@@ -49,14 +54,14 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+            <h3 className="text-sm font-semibold text-gray-900 mb-4">
               Quick Links
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li>
                 <Link
                   to="/"
-                  className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  className="text-sm text-gray-600 hover:text-primary-600 transition-colors"
                 >
                   Discover Tools
                 </Link>
@@ -64,82 +69,78 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/compare"
-                  className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  className="text-sm text-gray-600 hover:text-primary-600 transition-colors"
                 >
                   Compare Tools
                 </Link>
               </li>
               <li>
-                <a
-                  href="#categories"
-                  className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                <Link
+                  to="/submit"
+                  className="text-sm text-gray-600 hover:text-primary-600 transition-colors"
                 >
-                  Categories
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#reviews"
-                  className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                >
-                  Reviews
-                </a>
+                  Submit Tool
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Categories */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-              Categories
+            <h3 className="text-sm font-semibold text-gray-900 mb-4">
+              Top Categories
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li>
-                <a
-                  href="#education"
-                  className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                <Link
+                  to="/category/llms"
+                  className="text-sm text-gray-600 hover:text-primary-600 transition-colors"
                 >
-                  Education
-                </a>
+                  LLMs
+                </Link>
               </li>
               <li>
-                <a
-                  href="#coding"
-                  className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                <Link
+                  to="/category/coding"
+                  className="text-sm text-gray-600 hover:text-primary-600 transition-colors"
                 >
                   Coding
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#video"
-                  className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                <Link
+                  to="/category/video"
+                  className="text-sm text-gray-600 hover:text-primary-600 transition-colors"
                 >
                   Video
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#business"
-                  className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                <Link
+                  to="/category/design"
+                  className="text-sm text-gray-600 hover:text-primary-600 transition-colors"
                 >
-                  Business
-                </a>
+                  Design
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-gray-200 dark:border-dark-700 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <p className="text-gray-600 dark:text-gray-300 text-sm">
-              © 2024 AI Compass. All rights reserved.
+        <div className="border-t border-gray-200 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-gray-600">
+              © 2024 Smart AI Hub. All rights reserved.
             </p>
-            <div className="flex items-center space-x-1 text-sm text-gray-600 dark:text-gray-300 mt-4 md:mt-0">
-              <span>Made with</span>
-              <Heart className="w-4 h-4 text-red-500" />
-              <span>for the AI community</span>
+
+            {/* Developer Credit */}
+            <div className="flex items-center space-x-2 text-sm text-gray-700 font-medium">
+              <Code className="w-4 h-4 text-primary-600" />
+              <span>Developed by</span>
+              <span className="text-primary-600 font-semibold">Kundu Vinay Kumar Reddy</span>
+              <span className="text-gray-500">|</span>
+              <span className="text-gray-600">BTech CSE Graduate</span>
             </div>
           </div>
         </div>

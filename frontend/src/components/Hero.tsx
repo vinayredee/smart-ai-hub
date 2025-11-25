@@ -117,8 +117,8 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            Discover <strong className="text-gray-900">70+ cutting-edge AI tools</strong> carefully curated to boost
-            your productivity and unlock your creative potential
+            Discover the <strong className="text-gray-900">best AI tools for your needs</strong> - carefully curated collection of
+            70+ cutting-edge solutions
           </motion.p>
 
           {/* CTA Buttons */}
