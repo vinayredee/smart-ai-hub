@@ -322,7 +322,7 @@ export const aiTools: AITool[] = [
     id: 'suno-ai',
     name: 'Suno AI',
     description: 'AI music generator that creates complete songs from text descriptions',
-    category: categories[1], // music
+    category: categories[4], // music (audio)
     website: 'https://suno.ai',
     pricing: { type: 'freemium' },
     features: ['Text-to-music', 'Song generation', 'Multiple genres', 'Lyrics generation', 'Audio export'],
@@ -344,7 +344,7 @@ export const aiTools: AITool[] = [
     id: 'udio',
     name: 'Udio',
     description: 'AI music creation platform for generating original songs and instrumentals',
-    category: categories[1], // music
+    category: categories[4], // music (audio)
     website: 'https://udio.com',
     pricing: { type: 'freemium' },
     features: ['Music composition', 'Lyrics generation', 'Multiple instruments', 'Genre selection', 'Audio mixing'],
@@ -366,7 +366,7 @@ export const aiTools: AITool[] = [
     id: 'aiva',
     name: 'AIVA',
     description: 'AI composer that creates original music for various purposes including films and games',
-    category: categories[1], // music
+    category: categories[4], // music (audio)
     website: 'https://aiva.ai',
     pricing: { type: 'freemium' },
     features: ['Original compositions', 'Multiple styles', 'Emotional control', 'MIDI export', 'Commercial licensing'],
@@ -390,7 +390,7 @@ export const aiTools: AITool[] = [
     id: 'runway-ml',
     name: 'Runway ML',
     description: 'Creative AI suite for video editing, image generation, and multimedia content creation',
-    category: categories[2], // video
+    category: categories[3], // video
     website: 'https://runwayml.com',
     pricing: { type: 'freemium' },
     features: ['Video editing', 'Image generation', 'Text-to-video', 'Background removal', 'Motion tracking'],
@@ -412,7 +412,7 @@ export const aiTools: AITool[] = [
     id: 'synthesia',
     name: 'Synthesia',
     description: 'AI video generation platform that creates professional videos with virtual presenters',
-    category: categories[2], // video
+    category: categories[3], // video
     website: 'https://synthesia.io',
     pricing: { type: 'freemium' },
     features: ['AI avatars', 'Text-to-video', 'Multi-language support', 'Custom avatars', 'Screen recording'],
@@ -434,7 +434,7 @@ export const aiTools: AITool[] = [
     id: 'pika-labs',
     name: 'Pika Labs',
     description: 'AI video generation tool for creating short videos from text prompts',
-    category: categories[2], // video
+    category: categories[3], // video
     website: 'https://pika.art',
     pricing: { type: 'freemium' },
     features: ['Text-to-video', 'Image-to-video', 'Video editing', 'Style transfer', 'Motion control'],
@@ -458,7 +458,7 @@ export const aiTools: AITool[] = [
     id: 'd-id',
     name: 'D-ID',
     description: 'AI-powered platform for creating talking head videos and animated avatars',
-    category: categories[3], // animation
+    category: categories[3], // animation (video)
     website: 'https://d-id.com',
     pricing: { type: 'freemium' },
     features: ['Talking avatars', 'Lip-sync technology', 'Multiple languages', 'Custom avatars', 'Video generation'],
@@ -480,7 +480,7 @@ export const aiTools: AITool[] = [
     id: 'leia-pix',
     name: 'LeiaPix',
     description: 'AI tool for converting 2D images into 3D animations and depth maps',
-    category: categories[3], // animation
+    category: categories[3], // animation (video)
     website: 'https://convert.leiapix.com',
     pricing: { type: 'freemium' },
     features: ['2D to 3D conversion', 'Depth map generation', 'Animation creation', 'Multiple export formats', 'Real-time preview'],
@@ -504,7 +504,7 @@ export const aiTools: AITool[] = [
     id: 'chatgpt',
     name: 'ChatGPT',
     description: 'Advanced conversational AI for various tasks including writing, coding, analysis, and creative work',
-    category: categories[4], // coding
+    category: categories[1], // coding
     website: 'https://chat.openai.com',
     pricing: { type: 'freemium' },
     features: ['Natural language processing', 'Code generation', 'Creative writing', 'Data analysis', 'Translation'],
@@ -526,7 +526,7 @@ export const aiTools: AITool[] = [
     id: 'github-copilot',
     name: 'GitHub Copilot',
     description: 'AI pair programmer that helps you write code faster and with fewer errors',
-    category: categories[4], // coding
+    category: categories[1], // coding
     website: 'https://github.com/features/copilot',
     pricing: { type: 'freemium' },
     features: ['Code completion', 'Function generation', 'Bug detection', 'Multi-language support', 'IDE integration'],
@@ -548,7 +548,7 @@ export const aiTools: AITool[] = [
     id: 'replit-ghostwriter',
     name: 'Replit Ghostwriter',
     description: 'AI coding assistant integrated into Replit for real-time code generation and debugging',
-    category: categories[4], // coding
+    category: categories[1], // coding
     website: 'https://replit.com',
     pricing: { type: 'freemium' },
     features: ['Code generation', 'Real-time assistance', 'Multi-language support', 'Debugging help', 'Code explanation'],
@@ -572,7 +572,7 @@ export const aiTools: AITool[] = [
     id: 'julius-ai',
     name: 'Julius AI',
     description: 'AI data analyst that helps you understand and visualize your data through natural language queries',
-    category: categories[5], // business
+    category: categories[6], // business
     website: 'https://julius.ai',
     pricing: { type: 'freemium' },
     features: ['Data analysis', 'Natural language queries', 'Chart generation', 'Statistical insights', 'Data visualization'],
@@ -594,7 +594,7 @@ export const aiTools: AITool[] = [
     id: 'notion-ai',
     name: 'Notion AI',
     description: 'AI writing assistant integrated into Notion for content creation and productivity',
-    category: categories[5], // business
+    category: categories[6], // business
     website: 'https://notion.so',
     pricing: { type: 'freemium' },
     features: ['Content generation', 'Text summarization', 'Translation', 'Meeting notes', 'Task management'],
@@ -618,7 +618,7 @@ export const aiTools: AITool[] = [
     id: 'claude',
     name: 'Claude',
     description: 'AI assistant by Anthropic designed for helpful, harmless, and honest conversations',
-    category: categories[6], // sales
+    category: categories[6], // sales (business)
     website: 'https://claude.ai',
     pricing: { type: 'freemium' },
     features: ['Natural conversations', 'Code assistance', 'Creative writing', 'Analysis', 'Reasoning'],
@@ -640,7 +640,7 @@ export const aiTools: AITool[] = [
     id: 'copy-ai',
     name: 'Copy.ai',
     description: 'AI-powered copywriting tool for creating marketing content, sales copy, and business communications',
-    category: categories[6], // sales
+    category: categories[6], // sales (business)
     website: 'https://copy.ai',
     pricing: { type: 'freemium' },
     features: ['Copywriting', 'Marketing content', 'Sales emails', 'Social media posts', 'Product descriptions'],
@@ -664,7 +664,7 @@ export const aiTools: AITool[] = [
     id: 'grammarly',
     name: 'Grammarly',
     description: 'AI-powered writing assistant that helps improve grammar, style, and clarity',
-    category: categories[7], // productivity
+    category: categories[6], // productivity (business)
     website: 'https://grammarly.com',
     pricing: { type: 'freemium' },
     features: ['Grammar checking', 'Style suggestions', 'Tone detection', 'Plagiarism detection', 'Writing insights'],
@@ -686,7 +686,7 @@ export const aiTools: AITool[] = [
     id: 'calendly',
     name: 'Calendly AI',
     description: 'AI-powered scheduling assistant that automates meeting coordination and calendar management',
-    category: categories[7], // productivity
+    category: categories[6], // productivity (business)
     website: 'https://calendly.com',
     pricing: { type: 'freemium' },
     features: ['Automated scheduling', 'Calendar integration', 'Meeting reminders', 'Time zone handling', 'Custom availability'],
@@ -710,7 +710,7 @@ export const aiTools: AITool[] = [
     id: 'jasper',
     name: 'Jasper AI',
     description: 'AI content creation platform for marketing copy, blog posts, and business content',
-    category: categories[8], // writing
+    category: categories[5], // writing
     website: 'https://jasper.ai',
     pricing: { type: 'freemium' },
     features: ['Content generation', 'Blog writing', 'Marketing copy', 'SEO optimization', 'Brand voice'],
@@ -732,7 +732,7 @@ export const aiTools: AITool[] = [
     id: 'writesonic',
     name: 'Writesonic',
     description: 'AI writing tool for creating high-quality content including articles, ads, and social media posts',
-    category: categories[8], // writing
+    category: categories[5], // writing
     website: 'https://writesonic.com',
     pricing: { type: 'freemium' },
     features: ['Article writing', 'Ad copy', 'Social media content', 'Product descriptions', 'Email marketing'],
@@ -756,7 +756,7 @@ export const aiTools: AITool[] = [
     id: 'midjourney',
     name: 'Midjourney',
     description: 'AI-powered image generation tool that creates stunning artwork from text descriptions',
-    category: categories[9], // design
+    category: categories[2], // design
     website: 'https://midjourney.com',
     pricing: { type: 'freemium' },
     features: ['Text-to-image generation', 'High-quality artwork', 'Multiple art styles', 'Upscaling', 'Variations'],
@@ -778,7 +778,7 @@ export const aiTools: AITool[] = [
     id: 'dall-e',
     name: 'DALL-E',
     description: 'AI image generation system that creates images from natural language descriptions',
-    category: categories[9], // design
+    category: categories[2], // design
     website: 'https://openai.com/dall-e-2',
     pricing: { type: 'freemium' },
     features: ['Text-to-image', 'Image editing', 'Style transfer', 'High resolution', 'Creative variations'],
@@ -802,7 +802,7 @@ export const aiTools: AITool[] = [
     id: 'tableau-ai',
     name: 'Tableau AI',
     description: 'AI-powered data visualization and analytics platform for business intelligence',
-    category: categories[10], // data
+    category: categories[7], // data
     website: 'https://tableau.com',
     pricing: { type: 'freemium' },
     features: ['Data visualization', 'Business intelligence', 'Predictive analytics', 'Natural language queries', 'Automated insights'],
@@ -824,7 +824,7 @@ export const aiTools: AITool[] = [
     id: 'power-bi',
     name: 'Power BI',
     description: 'Microsoft\'s AI-powered business analytics service for data visualization and insights',
-    category: categories[10], // data
+    category: categories[7], // data
     website: 'https://powerbi.microsoft.com',
     pricing: { type: 'freemium' },
     features: ['Data visualization', 'AI insights', 'Natural language queries', 'Automated reports', 'Mobile access'],
@@ -848,7 +848,7 @@ export const aiTools: AITool[] = [
     id: 'zoom-ai',
     name: 'Zoom AI',
     description: 'AI-powered video conferencing platform with smart features and meeting assistance',
-    category: categories[11], // communication
+    category: categories[9], // communication
     website: 'https://zoom.us',
     pricing: { type: 'freemium' },
     features: ['Video conferencing', 'AI transcription', 'Meeting summaries', 'Smart recording', 'Virtual backgrounds'],
@@ -870,7 +870,7 @@ export const aiTools: AITool[] = [
     id: 'slack-ai',
     name: 'Slack AI',
     description: 'AI-powered team communication platform with smart search and workflow automation',
-    category: categories[11], // communication
+    category: categories[9], // communication
     website: 'https://slack.com',
     pricing: { type: 'freemium' },
     features: ['Team messaging', 'AI search', 'Workflow automation', 'File sharing', 'Integration hub'],
